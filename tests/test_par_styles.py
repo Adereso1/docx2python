@@ -22,7 +22,9 @@ class TestParStyles:
         content = docx2python(RESOURCES / "example.docx", paragraph_styles=True)
         assert content.document_runs == [
             [[[["Header"]]]],
-            [[[["Header", "Header text", "----media/image1.png----"]]]],
+            [[[["Header", "Header text", "----Picture 4----",
+                "A close up of a logo\n\nDescription automatically generated",
+                "----media/image1.png----"]]]],
             [[[["Header"]]]],
             [
                 [
@@ -82,12 +84,19 @@ class TestParStyles:
                         ["Heading1", "Heading 1"],
                         ["Heading2", "Heading 2"],
                         ["None"],
-                        ["None", "----media/image2.jpg----"],
+                        ["None",
+                         "----Picture 2----",
+                         "A jellyfish in water\n\nDescription automatically generated",
+                         "----media/image2.jpg----"],
                     ]
                 ]
             ],
             [[[["Footer"]]]],
-            [[[["Footer", "Footer text", "----media/image1.png----"]]]],
+            [[[["Footer",
+                "Footer text",
+                "----Picture 5----",
+                "A close up of a logo\n\nDescription automatically generated",
+                "----media/image1.png----"]]]],
             [[[["Footer"]]]],
             [
                 [
@@ -99,6 +108,8 @@ class TestParStyles:
                             "FootnoteText",
                             "footnote2)\t",
                             " Second footnote",
+                            "----Picture 1----",
+                            "A close up of a logo\n\nDescription automatically generated",
                             "----media/image1.png----",
                         ]
                     ],
@@ -114,6 +125,8 @@ class TestParStyles:
                             "EndnoteText",
                             "endnote2)\t",
                             " Second endnote",
+                            "----Picture 3----",
+                            "A close up of a logo\n\nDescription automatically generated",
                             "----media/image1.png----",
                         ]
                     ],

@@ -181,7 +181,9 @@ class TestHtmlFormatting:
                         ["<h1>", "Heading 1", "</h1>"],
                         ["<h2>", "Heading 2", "</h2>"],
                         [],
-                        ["----media/image2.jpg----"],
+                        ["----Picture 2----",
+                         "A jellyfish in water\n\nDescription automatically generated",
+                         "----media/image2.jpg----"],
                     ]
                 ]
             ]
