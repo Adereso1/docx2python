@@ -242,10 +242,8 @@ def get_text(file: File, root: EtreeElement | None = None) -> TablesList:
 
         elif tree.tag == Tags.IMAGE_ALT:
             with suppress(KeyError):
-                title = tree.attrib["name"]
                 description = tree.attrib["descr"]
-                tables.insert_text_as_new_run(f"----{title}----")
-                tables.insert_text_as_new_run(f'{description}')
+                tables.insert_text_as_new_run(f'----Image alt text---->{description}<')
 
         elif tree.tag == Tags.IMAGEDATA:
             with suppress(KeyError):

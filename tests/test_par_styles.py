@@ -22,8 +22,9 @@ class TestParStyles:
         content = docx2python(RESOURCES / "example.docx", paragraph_styles=True)
         assert content.document_runs == [
             [[[["Header"]]]],
-            [[[["Header", "Header text", "----Picture 4----",
-                "A close up of a logo\n\nDescription automatically generated",
+            [[[["Header",
+                "Header text",
+                "----Image alt text---->A close up of a logo\n\nDescription automatically generated<",
                 "----media/image1.png----"]]]],
             [[[["Header"]]]],
             [
@@ -85,8 +86,7 @@ class TestParStyles:
                         ["Heading2", "Heading 2"],
                         ["None"],
                         ["None",
-                         "----Picture 2----",
-                         "A jellyfish in water\n\nDescription automatically generated",
+                         "----Image alt text---->A jellyfish in water\n\nDescription automatically generated<",
                          "----media/image2.jpg----"],
                     ]
                 ]
@@ -94,8 +94,7 @@ class TestParStyles:
             [[[["Footer"]]]],
             [[[["Footer",
                 "Footer text",
-                "----Picture 5----",
-                "A close up of a logo\n\nDescription automatically generated",
+                "----Image alt text---->A close up of a logo\n\nDescription automatically generated<",
                 "----media/image1.png----"]]]],
             [[[["Footer"]]]],
             [
@@ -108,8 +107,7 @@ class TestParStyles:
                             "FootnoteText",
                             "footnote2)\t",
                             " Second footnote",
-                            "----Picture 1----",
-                            "A close up of a logo\n\nDescription automatically generated",
+                            "----Image alt text---->A close up of a logo\n\nDescription automatically generated<",
                             "----media/image1.png----",
                         ]
                     ],
@@ -125,8 +123,7 @@ class TestParStyles:
                             "EndnoteText",
                             "endnote2)\t",
                             " Second endnote",
-                            "----Picture 3----",
-                            "A close up of a logo\n\nDescription automatically generated",
+                            "----Image alt text---->A close up of a logo\n\nDescription automatically generated<",
                             "----media/image1.png----",
                         ]
                     ],
